@@ -1,6 +1,5 @@
 import { Card, Col } from "react-bootstrap";
 import "./CardService.css";
-//estoy recibiendo la informacion a recorrer mediante props desde Service
 
 export default function CardService({ service }) {
   const { title, subtitle, image, footer, link } = service;

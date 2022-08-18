@@ -1,5 +1,5 @@
 import { Container, Navbar } from "react-bootstrap";
-//el target="_blank" es para que el link que se encuentra en esa etiqeuta se abra en otra pagina web el noreferrer es para que no siga el enlace automaticamente
+
 export default function NavbarMenu() {
   return (
     <div>

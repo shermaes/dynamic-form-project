@@ -1,11 +1,9 @@
-import { Col, Container, Form, Row } from "react-bootstrap"
-import "./SecondStep.css"
+import { Col, Container, Form, Row } from "react-bootstrap";
+import "./SecondStep.css";
 import Select from "react-select";
 import { useState } from "react";
 
 export default function SecondStep() {
-
-  //array de objetos para esta seccion del form
   const options = [
     { id: 1, value: "football", label: "Football ⚽" },
     { id: 2, value: "computer", label: "Computer 💻" },
@@ -16,16 +14,16 @@ export default function SecondStep() {
     { id: 7, value: "run", label: "Run 👟" },
   ];
 
-  const [selectOption, setSelectOption] =useState(null)
-  //neceistamos esto para recorrer el array de objetos
-  const hobbiesSer= JSON.stringify(selectOption)
-  localStorage.setItem('hobbies', hobbiesSer)
+  const [selectOption, setSelectOption] = useState(null);
 
-  const onChangeAdditionalHobbie = (e) =>{
+  const hobbiesSer = JSON.stringify(selectOption);
+  localStorage.setItem("hobbies", hobbiesSer);
+
+  const onChangeAdditionalHobbie = (e) => {
     const sport = e.target.value;
-    //guardando en el localStorage, guardo todoa la informacion de los objetos seleccionados desde la pag
-    localStorage.setItem('adittionalHobbie', sport)
-  }
+
+    localStorage.setItem("adittionalHobbie", sport);
+  };
   return (
     <div>
       <h2>Select your favorite Hobbies</h2>
@@ -33,7 +31,7 @@ export default function SecondStep() {
       <Container className="p-5 text-center">
         <Row className="justify-content-md-center">
           <Col lg="7">
-          <Select
+            <Select
               defaultValue={selectOption}
               onChange={setSelectOption}
               options={options}
@@ -43,10 +41,14 @@ export default function SecondStep() {
           </Col>
           <Col lg="7" className="mt-4">
             <h5>Not there? Write it down here</h5>
-            <Form.Control type="text" placeholder="Karate" onChange={(e) => onChangeAdditionalHobbie(e)}/>
+            <Form.Control
+              type="text"
+              placeholder="Karate"
+              onChange={(e) => onChangeAdditionalHobbie(e)}
+            />
           </Col>
         </Row>
       </Container>
     </div>
-  )
+  );
 }

@@ -12,7 +12,7 @@ export default function Resume({ showModal, setStep, setModal }) {
   const clearForm = () => {
     localStorage.clear();
     setModal(false);
-    setStep(1)
+    setStep(1);
   };
 
   return (

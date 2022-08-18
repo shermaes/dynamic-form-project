@@ -1,9 +1,8 @@
-import {useState} from 'react'
-import { Container, Row } from "react-bootstrap"
+import { useState } from "react";
+import { Container, Row } from "react-bootstrap";
 import CardFruit from "./CardFruit";
-import "./FirstStep.css"
+import "./FirstStep.css";
 
-//pasare esta informacion mediante props al componente CardFruit
 export const fruits = [
   {
     id: 1,
@@ -29,15 +28,14 @@ export const fruits = [
 ];
 
 export default function FirstStep() {
-  const [selectedCard, setselectedCard] = useState(null)
+  const [selectedCard, setselectedCard] = useState(null);
 
   const clickCard = (fruit) => {
-    setselectedCard(fruit.id)
-    //como guardar la fruta en el local storage
-    localStorage.setItem('fruitName',fruit.name)
-    localStorage.setItem('iconFruit', fruit.icon)
-  }
+    setselectedCard(fruit.id);
 
+    localStorage.setItem("fruitName", fruit.name);
+    localStorage.setItem("iconFruit", fruit.icon);
+  };
 
   return (
     <div>
@@ -46,11 +44,15 @@ export default function FirstStep() {
       <Container className="p-5 text-center">
         <Row>
           {fruits.map((fruit, index) => (
-            <CardFruit fruit={fruit} key={index} clickCard={clickCard} selectedCard={selectedCard}/>
+            <CardFruit
+              fruit={fruit}
+              key={index}
+              clickCard={clickCard}
+              selectedCard={selectedCard}
+            />
           ))}
-          
         </Row>
       </Container>
     </div>
-  )
+  );
 }
