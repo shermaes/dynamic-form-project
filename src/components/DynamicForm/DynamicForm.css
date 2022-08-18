@@ -34,7 +34,7 @@
   }
   
   .dynamic-form .content-dynamic-form .next,
-  .before {
+  .last {
     box-shadow: inset 0px -6px 0px 0px #b0e9ec;
     cursor: pointer;
   }
