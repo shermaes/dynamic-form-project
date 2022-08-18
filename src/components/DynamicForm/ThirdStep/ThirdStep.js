@@ -7,7 +7,7 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
-
+import Resume from "../Resume/Resume";
 import "./ThirdStep.css";
 
 export default function ThirdStep({ setStep }) {
@@ -43,7 +43,9 @@ export default function ThirdStep({ setStep }) {
             View result 🙌
           </p>
         </div>
-       
+        {modal && (
+          <Resume showModal={modal} setModal={setModal} setStep={setStep} />
+        )}
       </Container>
     </div>
   );
